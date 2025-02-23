@@ -180,7 +180,7 @@ To simulate a **clean environment**, remove all installed packages **and verify*
 > 
 > {The interactive globe should open in a **standalone window**, allowing rotation and zoom. If errors occur, check that requirements.txt includes all necessary dependencies.}
 
-### ** :white_check_mark: 7. Analyze Dependencies with pipdeptree**
+### ** :white_check_mark: 7. Analyze Dependencies with pipdeptree** 
 
 > Generate and save the dependency tree:
 > 
