@@ -174,7 +174,7 @@ To simulate a **clean environment**, remove all installed packages **and verify*
 > 
 > {This should install only the necessary libraries while avoiding unnecessary dependencies.}
 
-### ** :x: 6. Verify That the Script Works**
+### ** :white_check_mark: 6. Verify That the Script Works**
 
 > Run the Python script to confirm that it functions correctly.
 > 
