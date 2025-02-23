@@ -104,95 +104,95 @@ fig.update_layout(
 fig.show()
 ```
 
-#### Disclaimers
+### Disclaimers
 
-- This will use a lot of data.  Run somewhere will it will be fast and cheap for you.
-- The downloaded .zip and ultimately .shp files should not be hosted on your git.  Make sure to ignore them.
-- "pip uninstall -y -r all_requirements.txt" should only be run in a virtual environment.  To be sure your terminal prompt should look like "(.venv) PS C:\Users\nicho\PycharmProjects\PythonProject>" indicating that the virtual environment is active.
+> - This will use a lot of data.  Run somewhere will it will be fast and cheap for you.
+> - The downloaded .zip and ultimately .shp files should not be hosted on your git.  Make sure to ignore them.
+> - "pip uninstall -y -r all_requirements.txt" should only be run in a virtual environment.  To be sure your terminal prompt should look like "(.venv) PS C:\Users\nicho\PycharmProjects\PythonProject>" indicating that the virtual environment is active.
 
-#### **Project Setup**
+### **Project Setup**
 
 You will:
 
-1. **Set up a virtual environment** for dependency isolation.
-2. **Manually install necessary libraries**.
-3. **Generate a full requirements file** (all_requirements.txt) and refine it into requirements.txt.
-4. **Remove all installed packages** to simulate a clean environment.
-5. **Reinstall dependencies using requirements.txt**.
-6. **Verify the script works** after reinstalling.
-7. **Analyze dependencies using pipdeptree**.
-8. **Document everything in a README.md**.
+> 1. **Set up a virtual environment** for dependency isolation.
+> 2. **Manually install necessary libraries**.
+> 3. **Generate a full requirements file** (all_requirements.txt) and refine it into requirements.txt.
+> 4. **Remove all installed packages** to simulate a clean environment.
+> 5. **Reinstall dependencies using requirements.txt**.
+> 6. **Verify the script works** after reinstalling.
+> 7. **Analyze dependencies using pipdeptree**.
+> 8. **Document everything in a README.md**.
 
-#### **Instructions**
+### **Instructions**
 
-#### **1. Set Up Your Repository**
+### ** :white_check_mark: 1. Set Up Your Repository**
 
-- Create a **new directory** in your Git repository for this assignment.
-- Initialize a **new Python project**.
-- **Create and activate a virtual environment**:
-- If using **PyCharm**, enable the option to **automatically create a virtual environment** when setting up the project.
-- Otherwise, manually create and activate the environment:
+> - Create a **new directory** in your Git repository for this assignment.
+> - Initialize a **new Python project**.
+> - **Create and activate a virtual environment**:
+> - If using **PyCharm**, enable the option to **automatically create a virtual environment** when setting up the project.
+> - Otherwise, manually create and activate the environment:
+> 
+> python -m venv venv<br>
+> source venv/bin/activate   # macOS/Linux<br>
+> venv\Scripts\activate      # Windows
 
-python -m venv venv
-source venv/bin/activate   # macOS/Linux
-venv\Scripts\activate      # Windows
-
-#### **2. Manually Install Required Packages**
+### ** :white_check_mark: 2. Manually Install Required Packages**
 
 Using pip, install the necessary libraries until you get the program to correctly run:
 
-pip install geopandas pandas ...
+> pip install geopandas pandas ...
+> 
+> {plotly is used for the interactive rotating globe, geopandas for country geometries, and requests for downloading the dataset if missing.}
 
-{plotly is used for the interactive rotating globe, geopandas for country geometries, and requests for downloading the dataset if missing.}
-
-#### **3. Generate a Full Requirements File (all_requirements.txt)**
+### ** :x: 3. Generate a Full Requirements File (all_requirements.txt)**
 
 After installing the required packages, export **all dependencies**:
 
-pip freeze > all_requirements.txt
+> pip freeze > all_requirements.txt
+> 
+> {To create a cleaner requirements file, use pipdeptree (or pipreqs) to determine the minimal required dependencies. This ensures we avoid unnecessary packages.}
+> 
+> pip install pipdeptree
+> pipdeptree > dependency_tree.txt
+> pipreqs . --force  # Generates a minimal requirements.txt
 
-{To create a cleaner requirements file, use pipdeptree (or pipreqs) to determine the minimal required dependencies. This ensures we avoid unnecessary packages.}
-
-pip install pipdeptree
-pipdeptree > dependency_tree.txt
-pipreqs . --force  # Generates a minimal requirements.txt
-
-#### **4. Remove All Installed Packages**
+### ** :x: 4. Remove All Installed Packages**
 
 To simulate a **clean environment**, remove all installed packages **and verify** that pip list only shows pip:
 
-pip uninstall -y -r all_requirements.txt
-pip list
+> pip uninstall -y -r all_requirements.txt
+> pip list
+> 
+> {Ensure that running python globe.py at this point results in an import error, proving that dependencies are missing.}
 
-{Ensure that running python globe.py at this point results in an import error, proving that dependencies are missing.}
+### ** :x: 5. Reinstall from requirements.txt**
 
-#### **5. Reinstall from requirements.txt**
+> Reinstall only the **minimal required** dependencies:
+> 
+> pip install -r requirements.txt
+> 
+> {This should install only the necessary libraries while avoiding unnecessary dependencies.}
 
-Reinstall only the **minimal required** dependencies:
+### ** :x: 6. Verify That the Script Works**
 
-pip install -r requirements.txt
+> Run the Python script to confirm that it functions correctly.
+> 
+> {The interactive globe should open in a **standalone window**, allowing rotation and zoom. If errors occur, check that requirements.txt includes all necessary dependencies.}
 
-{This should install only the necessary libraries while avoiding unnecessary dependencies.}
+### ** :x: 7. Analyze Dependencies with pipdeptree**
 
-#### **6. Verify That the Script Works**
+> Generate and save the dependency tree:
+> 
+> pipdeptree > dependency_tree.txt
+> 
+> {This file should contain a hierarchical list of dependencies, allowing you to understand which packages are required by others.}
 
-Run the Python script to confirm that it functions correctly.
-
-{The interactive globe should open in a **standalone window**, allowing rotation and zoom. If errors occur, check that requirements.txt includes all necessary dependencies.}
-
-#### **7. Analyze Dependencies with pipdeptree**
-
-Generate and save the dependency tree:
-
-pipdeptree > dependency_tree.txt
-
-{This file should contain a hierarchical list of dependencies, allowing you to understand which packages are required by others.}
-
-#### **8. Document Your Work**
+### ** :x: 8. Document Your Work**
 
 Create a README.md file in your project directory. It should include:
 
-- 📌 **Purpose of the script**: What it does and why.
-- 📝 **Steps followed**: A concise list of what was done.
-- 📊 **Output of pipdeptree** (copy from dependency_tree.txt).
-- 🔍 **Observations or issues**: Any insights, errors, or optimizations found during the process.
+> - 📌 **Purpose of the script**: What it does and why.
+> - 📝 **Steps followed**: A concise list of what was done.
+> - 📊 **Output of pipdeptree** (copy from dependency_tree.txt).
+> - 🔍 **Observations or issues**: Any insights, errors, or optimizations found during the process.
