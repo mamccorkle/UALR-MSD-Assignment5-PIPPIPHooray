@@ -166,7 +166,7 @@ To simulate a **clean environment**, remove all installed packages **and verify*
 > 
 > {Ensure that running python globe.py at this point results in an import error, proving that dependencies are missing.}
 
-### ** :x: 5. Reinstall from requirements.txt**
+### ** :white_check_mark: 5. Reinstall from requirements.txt**
 
 > Reinstall only the **minimal required** dependencies:
 > 
