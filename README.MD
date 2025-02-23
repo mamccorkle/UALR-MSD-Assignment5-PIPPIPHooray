@@ -157,7 +157,7 @@ After installing the required packages, export **all dependencies**:
 > pipdeptree > dependency_tree.txt<br>
 > pipreqs . --force  # Generates a minimal requirements.txt<br>
 
-### ** :x: 4. Remove All Installed Packages**
+### ** :white_check_mark: 4. Remove All Installed Packages**
 
 To simulate a **clean environment**, remove all installed packages **and verify** that pip list only shows pip:
 
