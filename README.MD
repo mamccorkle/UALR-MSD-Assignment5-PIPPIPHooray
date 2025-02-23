@@ -145,7 +145,7 @@ Using pip, install the necessary libraries until you get the program to correctl
 > 
 > {plotly is used for the interactive rotating globe, geopandas for country geometries, and requests for downloading the dataset if missing.}
 
-### ** :x: 3. Generate a Full Requirements File (all_requirements.txt)**
+### ** :white_check_mark: 3. Generate a Full Requirements File (all_requirements.txt)**
 
 After installing the required packages, export **all dependencies**:
 
@@ -153,9 +153,9 @@ After installing the required packages, export **all dependencies**:
 > 
 > {To create a cleaner requirements file, use pipdeptree (or pipreqs) to determine the minimal required dependencies. This ensures we avoid unnecessary packages.}
 > 
-> pip install pipdeptree
-> pipdeptree > dependency_tree.txt
-> pipreqs . --force  # Generates a minimal requirements.txt
+> pip install pipdeptree<br>
+> pipdeptree > dependency_tree.txt<br>
+> pipreqs . --force  # Generates a minimal requirements.txt<br>
 
 ### ** :x: 4. Remove All Installed Packages**
 
