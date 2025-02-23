@@ -1,5 +1,67 @@
 #### **Interactive Rotating Globe with Population Density**
 
+#### **Results**
+
+**Purpose of the script**
+
+> The purpose of the script is that it gives "Log Scaled Population Density" interactive map. It displays a glode that gives population densities for browsed areas.
+
+**Steps followed**
+
+> As per the git comments, here is a list of actions taken:
+>
+>    + README.MD
+>       Added a readme that will contain the instructions and observations
+>    + main.py
+>       Added the main python file with code that will be worked on or refactored
+>    + [LIB] installed  geopandas
+>    + [LIB] installed requests
+>    + [LIB] installed plotly
+>    + [LIB] installed pipdeptree
+>    * Exported dependency tree
+>    * Exported ALL dependencies tree
+>    - [LIB] uninstalled all dependencies (Produces an error upon running)
+>    + [LIB] reinstalled pip
+>    + [LIB] installed all dependencies from dependency_tree.txt
+>    * Verified script works as expected
+>    * Reexported dependency_tree_v2.txt for comparison to the original dependency_tree.txt
+
+**Output of pipdeptree**
+
+>    geopandas==1.0.1<br>
+>      - numpy [required: >=1.22, installed: 2.2.3]<br>
+>      - packaging [required: Any, installed: 24.2]<br>
+>      - pandas [required: >=1.4.0, installed: 2.2.3]<br>
+>        - numpy [required: >=1.26.0, installed: 2.2.3]<br>
+>        - python-dateutil [required: >=2.8.2, installed: 2.9.0.post0]<br>
+>          - six [required: >=1.5, installed: 1.17.0]<br>
+>        - pytz [required: >=2020.1, installed: 2025.1]<br>
+>        - tzdata [required: >=2022.7, installed: 2025.1]<br>
+>      - pyogrio [required: >=0.7.2, installed: 0.10.0]<br>
+>        - certifi [required: Any, installed: 2025.1.31]<br>
+>        - numpy [required: Any, installed: 2.2.3]<br>
+>        - packaging [required: Any, installed: 24.2]<br>
+>      - pyproj [required: >=3.3.0, installed: 3.7.1]<br>
+>        - certifi [required: Any, installed: 2025.1.31]<br>
+>      - shapely [required: >=2.0.0, installed: 2.0.7]<br>
+>        - numpy [required: >=1.14,<3, installed: 2.2.3]<br>
+>    pipdeptree==2.25.0<br>
+>      - packaging [required: >=24.1, installed: 24.2]<br>
+>      - pip [required: >=24.2, installed: 24.3.1]<br>
+>    plotly==6.0.0<br>
+>      - narwhals [required: >=1.15.1, installed: 1.27.1]<br>
+>      - packaging [required: Any, installed: 24.2]<br>
+>    requests==2.32.3<br>
+>      - certifi [required: >=2017.4.17, installed: 2025.1.31]<br>
+>      - charset-normalizer [required: >=2,<4, installed: 3.4.1]<br>
+>      - idna [required: >=2.5,<4, installed: 3.10]<br>
+>      - urllib3 [required: >=1.21.1,<3, installed: 2.3.0]<br>
+
+**Observations or issues**
+
+> The only issue I faced (easily fixed), occurred on step 4. This step removed pip along with all other dependencies available. Therefore, I had to reinstall pip manually before proceeding
+
+
 #### **Objective**
 
 The goal is to learn **dependency management** by manually handling package installations, generating a clean requirements.txt file, and verifying reproducibility.
@@ -188,7 +250,7 @@ To simulate a **clean environment**, remove all installed packages **and verify*
 > 
 > {This file should contain a hierarchical list of dependencies, allowing you to understand which packages are required by others.}
 
-### ** :x: 8. Document Your Work**
+### ** :white_check_mark: 8. Document Your Work**
 
 Create a README.md file in your project directory. It should include:
 
@@ -196,3 +258,4 @@ Create a README.md file in your project directory. It should include:
 > - 📝 **Steps followed**: A concise list of what was done.
 > - 📊 **Output of pipdeptree** (copy from dependency_tree.txt).
 > - 🔍 **Observations or issues**: Any insights, errors, or optimizations found during the process.
+
